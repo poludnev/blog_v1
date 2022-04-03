@@ -1,0 +1,19 @@
+{
+  "name": "roman_blog",
+  "version": "1.0.0",
+  "description": "personal blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poludnev/blog_v1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poludnev/blog_v1/issues"
+  },
+  "homepage": "https://github.com/poludnev/blog_v1#readme"
+}
