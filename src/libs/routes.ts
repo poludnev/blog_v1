@@ -1,9 +1,12 @@
 const Routes = {
   apiSendBlogFormPath: (): string => {
-    return 'blogDataTest';
+    console.log(process.env.NODE_ENV);
+    if (process.env.NODE_ENV === 'development') return 'blogDataDev';
+    return 'blogData';
   },
   apiGetBlogDataPath: (): string => {
-    return 'blogDataTest';
+    if (process.env.NODE_ENV === 'development') return 'blogDataDev';
+    return 'blogData';
   },
 };
 
