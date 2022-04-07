@@ -1,0 +1,16 @@
+.header-container {
+  // background-color: rgb(73, 198, 138);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 20px;
+
+  .sign-in-group {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .sign-in-status {
+    padding-right: 10px;
+  }
+}

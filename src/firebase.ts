@@ -7,13 +7,15 @@ import {
   QuerySnapshot,
 } from 'firebase/firestore';
 
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+
 const firebaseConfig = {
-  apiKey: 'AIzaSyAXrzngYGo2Y46PMBMk8Jd0Xen1OgDLBa4',
-  authDomain: 'blog-c0acc.firebaseapp.com',
-  projectId: 'blog-c0acc',
-  storageBucket: 'blog-c0acc.appspot.com',
-  messagingSenderId: '800181276923',
-  appId: '1:800181276923:web:863b57f2fbe6c41b3aa05e',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -44,4 +46,10 @@ export const addDocument = async (
 export const getDocuments = async (collectionPath: string = 'track') => {
   const querySnapshot = await getDocs(collection(db, collectionPath));
   return getDataFromSnapShot(querySnapshot);
+};
+
+export const auth = getAuth(app);
+
+export const signInWithEmail = (email: string, password: string) => {
+  return signInWithEmailAndPassword(auth, email, password);
 };
