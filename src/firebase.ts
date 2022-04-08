@@ -5,6 +5,8 @@ import {
   addDoc,
   getDocs,
   QuerySnapshot,
+  onSnapshot,
+  query,
 } from 'firebase/firestore';
 
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
@@ -20,7 +22,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 const getDataFromSnapShot = (snapshot: QuerySnapshot) => {
   const data: { [id: string]: any } = {};
@@ -31,21 +33,37 @@ const getDataFromSnapShot = (snapshot: QuerySnapshot) => {
   return data;
 };
 
-export const addDocument = async (
-  collectionPath: string = 'track',
-  data: Object,
-) => {
+export const addDocument = async (collectionPath: string, data: Object) => {
   try {
     const docRef = await addDoc(collection(db, collectionPath), data);
-    console.log('Document written with ID: ', docRef.id);
+    return docRef.id;
   } catch (error) {
     console.error('Error adding document: ', error);
   }
 };
 
-export const getDocuments = async (collectionPath: string = 'track') => {
-  const querySnapshot = await getDocs(collection(db, collectionPath));
-  return getDataFromSnapShot(querySnapshot);
+export const getDocuments = async (collectionPath: string) => {
+  try {
+    const querySnapshot = await getDocs(collection(db, collectionPath));
+    return getDataFromSnapShot(querySnapshot);
+  } catch (error) {
+    console.error('Error getting documents: ', error);
+  }
+};
+
+export const listenUpdate = (
+  collectionPath: string,
+  setState: React.Dispatch<React.SetStateAction<any>>,
+  processData: (data: unknown) => any,
+) => {
+  const unsubscribe = onSnapshot(
+    query(collection(db, collectionPath)),
+    (querySnapshot) => {
+      const processedData = processData(getDataFromSnapShot(querySnapshot));
+      setState(processedData);
+    },
+  );
+  return unsubscribe;
 };
 
 export const auth = getAuth(app);

@@ -17,10 +17,10 @@ const Button = (props: {
       type={type}
       className={cn(
         'button',
+        color,
         {
           'btn-negative': negative,
         },
-        color,
       )}
       onClick={onClick}
     >

@@ -8,6 +8,10 @@ const Routes = {
     if (process.env.NODE_ENV === 'development') return 'blogDataDev';
     return 'blogData';
   },
+  apiListenUpdateDataPath: (): string => {
+    if (process.env.NODE_ENV === 'development') return 'blogDataDev';
+    return 'blogData';
+  },
 };
 
 export default Routes;
