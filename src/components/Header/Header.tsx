@@ -17,7 +17,9 @@ const Header = (props: { showForm: () => void }) => {
 
   return (
     <div className="header-container">
-      <div>Roman's Blog</div>
+      <div>
+        <span className="title">Roman's Blog</span>
+      </div>
       <div className="sign-in-group">
         {isSignedIn && (
           <>
@@ -28,7 +30,12 @@ const Header = (props: { showForm: () => void }) => {
           </>
         )}
         {!isSignedIn && (
-          <Button title="Sign In" onClick={showForm} color="green" />
+          <Button
+            title="Sign In To Post"
+            onClick={showForm}
+            color="green"
+            negative
+          />
         )}
       </div>
     </div>
