@@ -1,5 +1,6 @@
 import PostFeedBack from '../PostFeedback/PostFeedBack';
 import './Post.styles.scss';
+import parseHTML from 'html-react-parser';
 
 type postProps = {
   data: { title: string; timestamp: number; text: string };
@@ -18,7 +19,9 @@ const Post = ({ data, feedback }: postProps) => {
         <div className="post-date">{formatDate(timestamp)}</div>
         <div className="post-title">{title}</div>
       </div>
-      <div className="post-body">{text}</div>
+      <div className="post-body">
+        <span className="post-text">{parseHTML(text)}</span>
+      </div>
       {feedback && <PostFeedBack />}
     </div>
   );
