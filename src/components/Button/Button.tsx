@@ -5,23 +5,18 @@ import './Button.styles.scss';
 
 const Button = (props: {
   title: string;
-  negative?: boolean;
-  color?: string;
-  onClick?: (e: React.FormEvent) => void;
-  type?: 'button' | 'submit' | undefined;
+  onClick?: (event: React.FormEvent) => void;
+  type?: 'button' | 'submit';
+  style?: { color?: 'red' | 'blue' | 'green'; inverted?: boolean };
 }) => {
-  const { title, negative, color = 'black', onClick, type = 'button' } = props;
+  const { title, onClick, type = 'button', style } = props;
 
   return (
     <button
       type={type}
-      className={cn(
-        'button',
-        {
-          'btn-negative': negative,
-        },
-        color,
-      )}
+      className={cn('button', style?.color, {
+        'inverted': style?.inverted,
+      })}
       onClick={onClick}
     >
       {title}
