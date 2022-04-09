@@ -1,48 +1,74 @@
 import React, { useState } from 'react';
-import BlogRepository from '../../repository/blogRepository';
+import Input from '../Input/Input';
+import Textarea from '../Textarea/Textarea';
+import Button from '../Button/Button';
 
 import './NewPostForm.styles.scss';
-const NewPostForm = () => {
-  const [title, setTitle] = useState<string>('');
-  const [text, setText] = useState<string>('');
 
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-    const timestamp = Date.now();
-    BlogRepository.sendForm({ title, text, timestamp });
-  };
+type NewPostFormProps = {
+  onClose: (() => void) | undefined;
+  submitAction:
+    | ((formData: { title: string; text: string; timestamp: number }) => void)
+    | undefined;
+};
+const NewPostForm = (props: NewPostFormProps) => {
+  const { onClose, submitAction } = props;
+  const [textAreaValue, setTextAreaValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
 
   const changeHandler =
     (cb: React.Dispatch<React.SetStateAction<string>>) =>
-    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
       cb(event.target.value);
     };
 
+  const clearForm = () => {
+    setTextAreaValue('');
+    setInputValue('');
+  };
+
+  const submitHandler = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (submitAction)
+      submitAction({
+        title: inputValue,
+        text: textAreaValue,
+        timestamp: Date.now(),
+      });
+
+    clearForm();
+    if (onClose) onClose();
+
+    console.log('submit handler');
+  };
+
   return (
-    <div className="new-post-form-container">
-      <form onSubmit={submitHandler}>
-        <div className="new-post-form-group">
-          <label className="new-post-form-label">Title</label>
-          <input
-            type="text"
-            className="new-post-form-input"
-            value={title}
-            onChange={changeHandler(setTitle)}
-          ></input>
-        </div>
-        <div className="new-post-form-group">
-          <label className="new-post-form-label">Text</label>
-          <textarea
-            className="new-post-form-text"
-            value={text}
-            onChange={changeHandler(setText)}
-          ></textarea>
-        </div>
-        <div className="new-post-form-group">
-          <button className="submit-button">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={submitHandler}>
+      <Input
+        labelTitle="You post title"
+        placeholder="Your post Title"
+        value={inputValue}
+        onChange={changeHandler(setInputValue)}
+      />
+      <Textarea
+        labelTitle="Post text"
+        placeholder="Put your text here"
+        value={textAreaValue}
+        onChange={changeHandler(setTextAreaValue)}
+      />
+      <div className="form-control-group">
+        <Button
+          title={'Submit'}
+          type="submit"
+          style={{ color: 'blue', inverted: true }}
+        />
+        <Button
+          title={'Close'}
+          style={{ color: 'red', inverted: true }}
+          onClick={onClose}
+        />
+      </div>
+    </form>
   );
 };
 

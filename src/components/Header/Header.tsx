@@ -1,15 +1,16 @@
-// import SignIn from '../SignIn/SignIn';
 import { useEffect, useState } from 'react';
-
 import { useAuth } from '../../contexts/AuthContext';
 import Button from '../Button/Button';
+import { modalTypes } from '../../types';
 
 import './Header.styles.scss';
 
-const Header = (props: { showForm: () => void }) => {
+const Header = (props: {
+  showModal: (modalType: modalTypes) => () => void;
+}) => {
   const { currentUser, signOut } = useAuth();
   const [isSignedIn, setSignedIn] = useState<boolean>(false);
-  const { showForm } = props;
+  const { showModal } = props;
 
   useEffect(() => {
     setSignedIn(!!currentUser);
@@ -26,16 +27,30 @@ const Header = (props: { showForm: () => void }) => {
             <div className="sign-in-status">
               Logged in as {currentUser?.email}
             </div>
-            <Button title="Sign Out" onClick={signOut} color="green" />
+            <Button
+              title="New Post"
+              style={{ color: 'green', inverted: true }}
+              onClick={showModal('newPostModal')}
+            />
+            <Button
+              title="Sign Out"
+              onClick={signOut}
+              style={{ color: 'green' }}
+            />
           </>
         )}
         {!isSignedIn && (
-          <Button
-            title="Sign In To Post"
-            onClick={showForm}
-            color="green"
-            negative
-          />
+          <>
+            <div className="sign-in-status">
+              Log in as admin to write new post
+            </div>
+            <Button
+              title="Sign In"
+              onClick={showModal('signInModal')}
+              style={{ color: 'green' }}
+            />
+          </>
+
         )}
       </div>
     </div>

@@ -2,16 +2,39 @@
   height: 35px;
   width: 100px;
   border: 0;
+  font-size: 18px;
   background-color: black;
   color: white;
-}
 
-.green {
-  background-color: green;
-
-  &.btn-negative {
-    border: 1px solid green;
+  &.inverted {
     background-color: white;
-    color: green;
+    color: black;
+    border: 1px solid black;
   }
+
+  &.green {
+    background-color: green;
+    &.inverted {
+      background-color: white;
+      color: green;
+      border: 1px solid green;
+    }
+  }
+
+  &.blue {
+    background-color: blue;
+    &.inverted {
+      background-color: white;
+      color: blue;
+      border: 1px solid blue;
+    }
+  }
+
+  &.red {
+    background-color: red;
+    &.inverted {
+      background-color: white;
+      color: red;
+      border: 1px solid red;
+    }
 }

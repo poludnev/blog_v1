@@ -1,0 +1,16 @@
+.textarea-group {
+  padding-top: 10px;
+  label {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-family: sans-serif;
+  }
+}

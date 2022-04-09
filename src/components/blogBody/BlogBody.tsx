@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import Post from '../Post/Post';
-import './BlogBody.styles.scss';
 import BlogRepository from '../../repository/blogRepository';
 
-import { postsListData } from '../../types';
+import './BlogBody.styles.scss';
+
+type postListData = {
+  allIDs: string[];
+  byID: { [id: string]: any };
+};
 
 const BlogBody = () => {
   const [blogData, setBlogData] = useState<postsListData | null>(null);
