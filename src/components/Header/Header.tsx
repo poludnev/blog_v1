@@ -18,7 +18,9 @@ const Header = (props: {
 
   return (
     <div className="header-container">
-      <div>Roman's Blog</div>
+      <div>
+        <span className="title">Roman's Blog</span>
+      </div>
       <div className="sign-in-group">
         {isSignedIn && (
           <>
@@ -48,6 +50,7 @@ const Header = (props: {
               style={{ color: 'green' }}
             />
           </>
+
         )}
       </div>
     </div>
