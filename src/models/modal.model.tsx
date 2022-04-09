@@ -6,6 +6,7 @@ export const getModalProps = (modalType: modalTypes): ModalBasicProps => {
   switch (modalType) {
     case 'newPostModal':
       return {
+        type: 'newPostModal',
         headerTitle: 'Write new post',
         footer: {
           show: false,
@@ -24,12 +25,12 @@ export const getModalProps = (modalType: modalTypes): ModalBasicProps => {
           ],
         },
         submitAction: ({ title, text, timestamp }) => {
-          console.log('submit action done', title, text, timestamp);
           BlogRepository.sendForm({ title, text, timestamp });
         },
       };
     case 'signInModal':
       return {
+        type: 'signInModal',
         headerTitle: 'Sing In',
       };
     default:

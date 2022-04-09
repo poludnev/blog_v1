@@ -6,12 +6,11 @@ import { modalTypes } from '../../types';
 import './Header.styles.scss';
 
 const Header = (props: {
-  showForm: () => void;
   showModal: (modalType: modalTypes) => () => void;
 }) => {
   const { currentUser, signOut } = useAuth();
   const [isSignedIn, setSignedIn] = useState<boolean>(false);
-  const { showForm, showModal } = props;
+  const { showModal } = props;
 
   useEffect(() => {
     setSignedIn(!!currentUser);
@@ -45,7 +44,7 @@ const Header = (props: {
             </div>
             <Button
               title="Sign In"
-              onClick={showForm}
+              onClick={showModal('signInModal')}
               style={{ color: 'green' }}
             />
           </>

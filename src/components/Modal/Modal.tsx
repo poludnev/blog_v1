@@ -1,6 +1,8 @@
+import React, { useEffect, useState } from 'react';
+import SignInForm from '../../components/SingInForm/SingInForm';
+import NewPostForm from '../../components/NewPostForm/NewPostForm';
 import Button from '../Button/Button';
-import Form from '../Form/Form';
-import { ModalBasicProps } from '../../types';
+import { ModalBasicProps, modalTypes } from '../../types';
 
 import './Modal.styles.scss';
 
@@ -40,7 +42,33 @@ interface ModalProps extends ModalBasicProps {
   onClose: () => void;
 }
 
-const Modal = ({ onClose, submitAction, headerTitle, footer }: ModalProps) => {
+const Modal = ({
+  type,
+  onClose,
+  submitAction,
+  headerTitle,
+  footer,
+}: ModalProps) => {
+  const [isLoaded, setLoded] = useState<boolean>(false);
+  const [bodyComponentType, setBodyComponentType] = useState<modalTypes | null>(
+    null,
+  );
+
+  const getComponent = (type: modalTypes | null) => {
+    switch (type) {
+      case 'newPostModal':
+        return NewPostForm;
+      case 'signInModal':
+        return SignInForm;
+      default:
+        throw new Error('wrong type');
+    }
+  };
+
+  useEffect(() => {
+    setBodyComponentType(type);
+    setLoded(true);
+  }, [type, isLoaded]);
   return (
     <div className="modal" onClick={onClose}>
       <div
@@ -55,11 +83,13 @@ const Modal = ({ onClose, submitAction, headerTitle, footer }: ModalProps) => {
             </button>
           </div>
           <div className="modal-body">
-            <BodyComponent
-              component={Form}
-              onClose={onClose}
-              submitAction={submitAction}
-            />
+            {isLoaded && (
+              <BodyComponent
+                component={getComponent(bodyComponentType)}
+                onClose={onClose}
+                submitAction={submitAction}
+              />
+            )}
           </div>
           {footer?.show && (
             <div className="modal-footer">

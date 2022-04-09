@@ -1,5 +1,6 @@
 export interface ModalBasicProps {
   submitAction?: (data?: any) => void;
+  type: modalTypes;
   headerTitle: string;
   footer?: {
     show: boolean;
