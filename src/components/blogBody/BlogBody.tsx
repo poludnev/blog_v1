@@ -4,7 +4,7 @@ import BlogRepository from '../../repository/blogRepository';
 
 import './BlogBody.styles.scss';
 
-type postListData = {
+type postsListData = {
   allIDs: string[];
   byID: { [id: string]: any };
 };
