@@ -1,6 +1,7 @@
 import PostFeedBack from '../PostFeedback/PostFeedBack';
 import './Post.styles.scss';
 import parseHTML from 'html-react-parser';
+import timeDateService from '../../services/timeDateService';
 
 type postProps = {
   data: { title: string; timestamp: number; text: string };
@@ -11,7 +12,8 @@ const Post = ({ data, feedback }: postProps) => {
 
   const formatDate = (timeStamp: number) => {
     const date = new Date(timeStamp);
-    return date.toISOString();
+    const elapsedTime = timeDateService.getElapsedTime(timeStamp, Date.now());
+    return `${elapsedTime} ago ${date.toISOString()}`;
   };
   return (
     <div className="post-container">
