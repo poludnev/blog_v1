@@ -40,3 +40,5 @@ Anyway:
    control showing/closing of the modal with closures. It works, but I'm afraid
    it makes the code complicated and confusing.
 4. Change paths from relative to absolute (../../ to app/component/..)
+
+5. Add plurals-management to dates.
