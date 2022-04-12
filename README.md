@@ -42,3 +42,5 @@ Anyway:
 4. Change paths from relative to absolute (../../ to app/component/..)
 
 5. Add plurals-management to dates.
+
+6. Add confirmation prompt to closing the modal if it is not empty. 
