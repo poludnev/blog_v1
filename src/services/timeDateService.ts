@@ -1,3 +1,4 @@
+import { getFormatedMonth } from '../libs/tiemDate';
 export const getElapsedTime = (
   prevTimestamp: number,
   currentTimestamp: number,
@@ -31,5 +32,22 @@ export const getElapsedTime = (
   return 'Less than minute';
 };
 
-const timeDateService = { getElapsedTime };
+export const getFormatedDate = (timestamp: number): string => {
+  const date = new Date(timestamp);
+
+  const localHours: string = date.getHours().toString().padStart(2, '0');
+  const localMinutes: string = date.getMinutes().toString().padStart(2, '0');
+  const localTime: string = `${localHours}:${localMinutes}`;
+
+  const day: number = date.getDate();
+  const month: number = date.getMonth();
+  const year: number = date.getFullYear();
+
+  const formatedMonth: string = getFormatedMonth(month);
+  const localDate: string = `${formatedMonth} ${day}, ${year}`;
+
+  return `${localDate} at ${localTime}`;
+};
+
+const timeDateService = { getElapsedTime, getFormatedDate };
 export default timeDateService;
