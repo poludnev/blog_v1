@@ -1,4 +1,10 @@
 import { getFormatedMonth } from 'src/libs/tiemDate';
+
+const pluralise = (string: string, number: number) => {
+  if (number > 2) return `${string}s`;
+  return string;
+};
+
 export const getElapsedTime = (
   prevTimestamp: number,
   currentTimestamp: number,
@@ -9,25 +15,26 @@ export const getElapsedTime = (
 
   const minutesPerYear = 365 * 24 * 60;
   const years = minutes / minutesPerYear;
-  if (years >= 1) return `${Math.round(years)} years`;
+  if (years >= 1) return `${Math.round(years)} ${pluralise('year', years)}`;
 
   const minutesPerMonth = 30 * 24 * 60;
   const months = minutes / minutesPerMonth;
-  if (months >= 1) return `${Math.round(months)} months`;
+  if (months >= 1) return `${Math.round(months)} ${pluralise('month', months)}`;
 
   const minutesPerWeek = 7 * 24 * 60;
   const weeks = minutes / minutesPerWeek;
-  if (weeks >= 1) return `${Math.round(weeks)} weeks`;
+  if (weeks >= 1) return `${Math.round(weeks)} ${pluralise('week', weeks)}`;
 
   const minutesPerDay = 24 * 60;
   const days = minutes / minutesPerDay;
-  if (days >= 1) return `${Math.round(days)} days`;
+  if (days >= 1) return `${Math.round(days)} ${pluralise('day', days)}`;
 
   const minutesPerHour = 60;
   const hours = minutes / minutesPerHour;
-  if (hours >= 1) return `${Math.round(hours)} hours`;
+  if (hours >= 1) return `${Math.round(hours)} ${pluralise('hour', hours)}`;
 
-  if (minutes >= 1) return `${Math.round(minutes)} minutes`;
+  if (minutes >= 1)
+    return `${Math.round(minutes)} ${pluralise('minute', minutes)}`;
 
   return 'Less than minute';
 };
