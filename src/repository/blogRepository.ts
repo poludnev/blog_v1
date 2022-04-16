@@ -1,8 +1,8 @@
 import React from 'react';
-import apiClient from '../libs/apiClient';
-import Routes from '../libs/routes';
+import apiClient from 'src/libs/apiClient';
+import Routes from 'src/libs/routes';
 
-import { postsListData } from '../types';
+import { postsListData } from 'src/types';
 
 const blogRepository = {
   async sendForm(data: { title: string; text: string; timestamp: number }) {

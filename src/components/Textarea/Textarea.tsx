@@ -1,4 +1,4 @@
-import './Textarea.styles.scss';
+import 'src/components/Textarea/Textarea.styles.scss';
 
 type TextareaProps = {
   showlabel?: boolean;

@@ -1,4 +1,4 @@
-import './PostFeedBack.styles.scss';
+import 'src/components/PostFeedback/PostFeedBack.styles.scss';
 const PostFeedBack = () => {
   return (
     <div className="post-feedback">

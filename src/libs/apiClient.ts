@@ -1,4 +1,4 @@
-import { addDocument, getDocuments, listenUpdate } from '../firebase';
+import { addDocument, getDocuments, listenUpdate } from 'src/firebase';
 const apiClient = {
   get(url: string) {
     return getDocuments(url);

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Post from '../Post/Post';
-import BlogRepository from '../../repository/blogRepository';
+import BlogRepository from 'src/repository/blogRepository';
 
-import './BlogBody.styles.scss';
+import 'src/components/BlogBody/BlogBody.styles.scss';
 
 type postsListData = {
   allIDs: string[];

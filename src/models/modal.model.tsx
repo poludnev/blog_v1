@@ -1,6 +1,6 @@
-import { ModalBasicProps } from '../types';
-import BlogRepository from '../repository/blogRepository';
-import { modalTypes } from '../types';
+import { ModalBasicProps } from 'src/types';
+import BlogRepository from 'src/repository/blogRepository';
+import { modalTypes } from 'src/types';
 
 export const getModalProps = (modalType: modalTypes): ModalBasicProps => {
   switch (modalType) {

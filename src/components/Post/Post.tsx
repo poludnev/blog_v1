@@ -1,7 +1,7 @@
-import PostFeedBack from '../PostFeedback/PostFeedBack';
-import './Post.styles.scss';
+import PostFeedBack from 'src/components/PostFeedback/PostFeedBack';
+import 'src/components/Post/Post.styles.scss';
 import parseHTML from 'html-react-parser';
-import timeDateService from '../../services/timeDateService';
+import timeDateService from 'src/services/timeDateService';
 
 type postProps = {
   data: { title: string; timestamp: number; text: string };

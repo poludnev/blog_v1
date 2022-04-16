@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import Button from '../Button/Button';
-import { modalTypes } from '../../types';
+import { useAuth } from 'src/contexts/AuthContext';
+import Button from 'src/components/Button/Button';
+import { modalTypes } from 'src/types';
 
-import './Header.styles.scss';
+import 'src/components/Header/Header.styles.scss';
 
 const Header = (props: {
   showModal: (modalType: modalTypes) => () => void;
@@ -50,7 +50,6 @@ const Header = (props: {
               style={{ color: 'green' }}
             />
           </>
-
         )}
       </div>
     </div>

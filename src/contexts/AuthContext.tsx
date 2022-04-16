@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { User } from 'firebase/auth';
 
-import { auth, signInWithEmail } from '../firebase';
+import { auth, signInWithEmail } from 'src/firebase';
 
 type props = {
   children: React.ReactChild | React.ReactChild[];
