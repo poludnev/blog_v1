@@ -43,3 +43,5 @@ Anyway:
 4. Add plurals-management to dates.
 
 5. Add confirmation prompt to closing the modal if it is not empty.
+
+6. Add mobile friendly design
