@@ -43,3 +43,5 @@ Anyway:
 4. Add confirmation prompt to closing the modal if it is not empty.
 
 5. Add mobile friendly design
+
+6. Add form validation
