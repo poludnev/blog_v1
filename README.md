@@ -40,8 +40,6 @@ Anyway:
    control showing/closing of the modal with closures. It works, but I'm afraid
    it makes the code complicated and confusing.
 
-4. Add plurals-management to dates.
+4. Add confirmation prompt to closing the modal if it is not empty.
 
-5. Add confirmation prompt to closing the modal if it is not empty.
-
-6. Add mobile friendly design
+5. Add mobile friendly design
