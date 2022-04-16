@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import SignInForm from '../../components/SingInForm/SingInForm';
-import NewPostForm from '../../components/NewPostForm/NewPostForm';
-import Button from '../Button/Button';
-import { ModalBasicProps, modalTypes } from '../../types';
+import SignInForm from 'src/components/SingInForm/SingInForm';
+import NewPostForm from 'src/components/NewPostForm/NewPostForm';
+import Button from 'src/components/Button/Button';
+import { ModalBasicProps, modalTypes } from 'src/types';
 
 import './Modal.styles.scss';
 

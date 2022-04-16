@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import BlogBody from '../../components/BlogBody/BlogBody';
-import Header from '../../components/Header/Header';
-import Modal from '../../components/Modal/Modal';
-import modalModel from '../../models/modal.model';
-import { modalTypes } from '../../types';
-import './Homepage.styles.scss';
+import BlogBody from 'src/components/BlogBody/BlogBody';
+import Header from 'src/components/Header/Header';
+import Modal from 'src/components/Modal/Modal';
+import modalModel from 'src/models/modal.model';
+import { modalTypes } from 'src/types';
+import 'src/pages/homepage/Homepage.styles.scss';
 
 const Homepage = () => {
   const [isShowModal, setShowModal] = useState<boolean>(false);

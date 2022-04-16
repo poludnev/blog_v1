@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import './Button.styles.scss';
+import 'src/components/Button/Button.styles.scss';
 
 const Button = (props: {
   title: string;

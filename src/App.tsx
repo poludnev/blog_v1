@@ -1,6 +1,6 @@
-import Homepage from './pages/homepage/Homepage';
-import { AuthProvider } from './contexts/AuthContext';
-import './App.css';
+import Homepage from 'src/pages/homepage/Homepage';
+import { AuthProvider } from 'src/contexts/AuthContext';
+import 'src/App.css';
 
 function App() {
   return (

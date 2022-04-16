@@ -1,4 +1,4 @@
-import './Input.styles.scss';
+import 'src/components/Input/Input.styles.scss';
 
 type InputProps = {
   showlabel?: boolean;

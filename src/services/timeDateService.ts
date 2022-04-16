@@ -1,4 +1,4 @@
-import { getFormatedMonth } from '../libs/tiemDate';
+import { getFormatedMonth } from 'src/libs/tiemDate';
 export const getElapsedTime = (
   prevTimestamp: number,
   currentTimestamp: number,

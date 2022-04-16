@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import { useAuth } from '../../contexts/AuthContext';
+import Input from 'src/components/Input/Input';
+import Button from 'src/components/Button/Button';
+import { useAuth } from 'src/contexts/AuthContext';
 
-import './SingInForm.styles.scss';
+import 'src/components/SingInForm/SingInForm.styles.scss';
 
 type SignInFormProps = {
   onClose: (() => void) | undefined;

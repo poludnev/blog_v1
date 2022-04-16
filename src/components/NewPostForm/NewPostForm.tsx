@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Textarea from '../Textarea/Textarea';
-import Button from '../Button/Button';
+import Input from 'src/components/Input/Input';
+import Textarea from 'src/components/Textarea/Textarea';
+import Button from 'src/components/Button/Button';
 
-import './NewPostForm.styles.scss';
+import 'src/components/NewPostForm/NewPostForm.styles.scss';
 
 type NewPostFormProps = {
   onClose: (() => void) | undefined;
