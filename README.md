@@ -39,8 +39,7 @@ Anyway:
 3. Revise state management. Now I use Context to control the logging-in, and
    control showing/closing of the modal with closures. It works, but I'm afraid
    it makes the code complicated and confusing.
-4. Change paths from relative to absolute (../../ to app/component/..)
 
-5. Add plurals-management to dates.
+4. Add plurals-management to dates.
 
-6. Add confirmation prompt to closing the modal if it is not empty. 
+5. Add confirmation prompt to closing the modal if it is not empty.
