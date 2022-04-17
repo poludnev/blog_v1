@@ -31,6 +31,8 @@ I implemented basic functions: read, log in and write new posts with primitive
 design. There are a lot of things to do and I have not decided what to do first.
 Anyway:
 
+9. Add separate login page with disclaimer, that now it is only for admin.
+
 8. Add and configure css-modules.
 
 1. CSS and selectors refactoring. All are made hastily and require to be
