@@ -45,3 +45,6 @@ Anyway:
 5. Add mobile friendly design
 
 6. Add form validation
+
+7, Separate admin's and users pages. Admin's page has adding message form and
+some additional functions.
