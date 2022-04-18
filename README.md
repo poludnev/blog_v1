@@ -31,24 +31,25 @@ I implemented basic functions: read, log in and write new posts with primitive
 design. There are a lot of things to do and I have not decided what to do first.
 Anyway:
 
-9. Add separate login page with disclaimer, that now it is only for admin.
+7. Separate admin's and users pages. Admin's page has adding message form and
+   some additional functions.
 
 8. Add and configure css-modules.
 
-1. CSS and selectors refactoring. All are made hastily and require to be
+9. CSS and selectors refactoring. All are made hastily and require to be
    revised.
-1. Markup for the post. Now they are just strings without any layout. I use
-   'html-parser' for that old posts were layouted with HTML, but it's not the
-   best solution.
-1. Revise state management. Now I use Context to control the logging-in, and
-   control showing/closing of the modal with closures. It works, but I'm afraid
-   it makes the code complicated and confusing.
+10. Markup for the post. Now they are just strings without any layout. I use
+    'html-parser' for that old posts were layouted with HTML, but it's not the
+    best solution.
+11. Revise state management. Now I use Context to control the logging-in, and
+    control showing/closing of the modal with closures. It works, but I'm afraid
+    it makes the code complicated and confusing.
 
-1. Add confirmation prompt to closing the modal if it is not empty.
+12. Add confirmation prompt to closing the modal if it is not empty.
 
-1. Add mobile friendly design
+13. Add mobile friendly design
 
-1. Add form validation
+14. Add form validation
 
-7, Separate admin's and users pages. Admin's page has adding message form and
-some additional functions.
+complete 9. Add separate login page with disclaimer, that now it is only for
+admin // no need the disclaimer
