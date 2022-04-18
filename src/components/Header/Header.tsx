@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from 'src/contexts/AuthContext';
-import Button from 'src/components/Button/Button';
 import { modalTypes } from 'src/types';
+import Button from '../Button/Button';
 
-import 'src/components/Header/Header.styles.scss';
+import styles from 'src/components/Header/Header.module.css';
 
 const Header = (props: {
   showModal: (modalType: modalTypes) => () => void;
@@ -15,42 +15,50 @@ const Header = (props: {
   useEffect(() => {
     setSignedIn(!!currentUser);
   }, [currentUser]);
-
   return (
-    <div className="header-container">
-      <div>
-        <span className="title">Roman's Blog</span>
-      </div>
-      <div className="sign-in-group">
-        {isSignedIn && (
-          <>
-            <div className="sign-in-status">
-              Logged in as {currentUser?.email}
-            </div>
-            <Button
-              title="New Post"
-              style={{ color: 'green', inverted: true }}
-              onClick={showModal('newPostModal')}
-            />
-            <Button
-              title="Sign Out"
-              onClick={signOut}
-              style={{ color: 'green' }}
-            />
-          </>
-        )}
-        {!isSignedIn && (
-          <>
-            <div className="sign-in-status">
-              Log in as admin to write new post
-            </div>
+    <div className={styles.header}>
+      <div className={styles.headerContainer}>
+        <div>
+          <h2>Roman's Blog</h2>
+        </div>
+        <div className={styles.headerMenuButton}>
+          <Button
+            disabled
+            title="menu"
+            style={{
+              color: 'grey',
+              inverted: true,
+              rounded: true,
+              size: 'smaller',
+            }}
+          />
+        </div>
+        <div className={styles.headerNavMenu}>
+          {isSignedIn && (
+            <>
+              <div className="sign-in-status">
+                Signed in as {currentUser?.email}
+              </div>
+              <Button
+                title="New Post"
+                style={{ color: 'green', inverted: true, size: 'smaller' }}
+                onClick={showModal('newPostModal')}
+              />
+              <Button
+                title="Sign Out"
+                onClick={signOut}
+                style={{ color: 'grey', inverted: true, size: 'smaller' }}
+              />
+            </>
+          )}
+          {!isSignedIn && (
             <Button
               title="Sign In"
               onClick={showModal('signInModal')}
-              style={{ color: 'green' }}
+              style={{ color: 'blue', size: 'smaller', inverted: true }}
             />
-          </>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

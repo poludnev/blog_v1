@@ -1,11 +1,14 @@
 .button {
   height: 50px;
-  width: 100px;
   border: 0;
   font-size: 18px;
   background-color: black;
   color: white;
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 10px 25px;
 
   &.disabled {
     cursor: not-allowed;
@@ -13,16 +16,15 @@
 
     &.inverted {
       background-color: white;
-      color: #cdcdcd;;
-      border: 1px solid #cdcdcd;;
+      color: #cdcdcd;
+      border: 1px solid #cdcdcd;
     }
-
   }
 
   &.smaller {
     height: 35px;
-    width: 65px;
     font-size: 14px;
+    padding: 10px 15px;
   }
 
   &.inverted {

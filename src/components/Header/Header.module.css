@@ -1,0 +1,48 @@
+.header {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(125, 125, 125, 50%);
+}
+
+.headerContainer {
+  height: 10%;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  padding: 10px 20px;
+  margin: auto;
+}
+
+.headerNavMenu {
+  display: none;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-size: 28px;
+  color: #5c5c5c;
+}
+
+@media (max-width: 500px) {
+  .headerMenuButton {
+    background-color: aqua;
+  }
+}
+
+@media (min-width: 501px) {
+  .headerMenuButton {
+    display: none;
+    background-color: blue;
+  }
+
+  .headerNavMenu {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerNavMenu > button {
+    margin-left: 10px;
+
+  }
+}
