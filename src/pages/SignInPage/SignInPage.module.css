@@ -60,3 +60,14 @@ form > div {
   max-width: 80%;
   margin: auto;
 }
+
+.back {
+  position: absolute;
+  border-bottom: 1px solid #5c5c5c;
+  padding: 10px 10px;
+}
+
+.back a {
+  text-decoration: none;
+  color: #5c5c5c;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from 'src/contexts/AuthContext';
+import { useNavigate, Link } from 'react-router-dom';
 
 import Input from 'src/components/Input/Input';
 import Button from 'src/components/Button/Button';
@@ -12,6 +13,7 @@ const SignInPage = () => {
   const [isLoginError, setLoginError] = useState<boolean>(false);
   const [isLoginingIn, setIsLogingIn] = useState<boolean>(false);
   const { signIn } = useAuth();
+  const navigate = useNavigate();
 
   const submitHandler = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -19,6 +21,7 @@ const SignInPage = () => {
 
     try {
       await signIn(loginValue, passwordValue);
+      navigate('/blog_v1');
     } catch (e) {
       setLoginError(true);
     } finally {
@@ -36,6 +39,9 @@ const SignInPage = () => {
     <div className={styles.container}>
       <div className={styles.main}>
         <div className={styles.dialog}>
+          <div className={styles.back}>
+            <Link to="/">{ '< back'}</Link>
+          </div>
           <div className={styles.title}>
             <h1>SIGN IN</h1>
           </div>

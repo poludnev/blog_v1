@@ -24,6 +24,26 @@ h2 {
   color: #5c5c5c;
 }
 
+.dropdown {
+  background-color: white;
+  position: absolute;
+  right: 20px;
+  top: 45px;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+}
+
+.dropdownRow {
+  height: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.dropdownRow button {
+  width: 100px;
+}
+
 @media (max-width: 500px) {
   .headerMenuButton {
     background-color: aqua;
@@ -43,6 +63,5 @@ h2 {
 
   .headerNavMenu > button {
     margin-left: 10px;
-
   }
 }
