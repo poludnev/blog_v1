@@ -4,7 +4,7 @@ import 'src/App.css';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <AuthProvider value>
         <Homepage />
       </AuthProvider>

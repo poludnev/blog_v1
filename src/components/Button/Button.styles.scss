@@ -1,15 +1,40 @@
 .button {
-  height: 35px;
-  width: 100px;
+  height: 50px;
   border: 0;
   font-size: 18px;
   background-color: black;
   color: white;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 10px 25px;
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: #cdcdcd;
+
+    &.inverted {
+      background-color: white;
+      color: #cdcdcd;
+      border: 1px solid #cdcdcd;
+    }
+  }
+
+  &.smaller {
+    height: 35px;
+    font-size: 14px;
+    padding: 10px 15px;
+  }
 
   &.inverted {
     background-color: white;
     color: black;
     border: 1px solid black;
+  }
+
+  &.rounded {
+    border-radius: 0.25rem;
   }
 
   &.green {
@@ -22,11 +47,11 @@
   }
 
   &.blue {
-    background-color: blue;
+    background-color: #005eb7;
     &.inverted {
       background-color: white;
-      color: blue;
-      border: 1px solid blue;
+      color: #005eb7;
+      border: 1px solid #005eb7;
     }
   }
 
@@ -36,6 +61,15 @@
       background-color: white;
       color: red;
       border: 1px solid red;
+    }
+  }
+
+  &.grey {
+    background-color: #5c5c5c;
+    &.inverted {
+      background-color: white;
+      color: #5c5c5c;
+      border: 1px solid #5c5c5c;
     }
   }
 }

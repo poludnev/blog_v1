@@ -1,0 +1,73 @@
+.container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+.main {
+  height: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+}
+
+.dialog {
+  width: 100%;
+  box-shadow: 0 0 20px rgba(125, 125, 125, 50%);
+  padding: 10px;
+  background-color: white;
+}
+
+.title {
+  width: 100%;
+  padding: 5px;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 40px;
+  color: #5c5c5c;
+}
+
+.formContainer {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+}
+
+form > div {
+  padding-bottom: 10px;
+}
+
+.loginError {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+.back {
+  position: absolute;
+  border-bottom: 1px solid #5c5c5c;
+  padding: 10px 10px;
+}
+
+.back a {
+  text-decoration: none;
+  color: #5c5c5c;
+}
