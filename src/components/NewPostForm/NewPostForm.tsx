@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from 'src/components/Input/Input';
 import Textarea from 'src/components/Textarea/Textarea';
 import Button from 'src/components/Button/Button';
+import { useNewPostContext } from 'src/contexts/NewPostContext';
 
 import 'src/components/NewPostForm/NewPostForm.styles.scss';
 
@@ -12,8 +13,9 @@ type NewPostFormProps = {
     | undefined;
 };
 const NewPostForm = (props: NewPostFormProps) => {
+  const { currentPostText, updatePostText } = useNewPostContext();
   const { onClose, submitAction } = props;
-  const [textAreaValue, setTextAreaValue] = useState<string>('');
+  const [textAreaValue, setTextAreaValue] = useState<string>(currentPostText);
   const [inputValue, setInputValue] = useState<string>('');
 
   const changeHandler =
@@ -41,6 +43,10 @@ const NewPostForm = (props: NewPostFormProps) => {
 
     console.log('submit handler');
   };
+
+  useEffect(() => {
+    updatePostText(textAreaValue);
+  }, [textAreaValue, updatePostText]);
 
   return (
     <form onSubmit={submitHandler}>
