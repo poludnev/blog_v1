@@ -31,27 +31,28 @@ I implemented basic functions: read, log in and write new posts with primitive
 design. There are a lot of things to do and I have not decided what to do first.
 Anyway:
 
-7. Separate admin's and users pages. Admin's page has adding message form and
+1. Separate admin's and users pages. Admin's page has adding message form and
    some additional functions.
-
-8. Add and configure css-modules.
-
-9. CSS and selectors refactoring. All are made hastily and require to be
+2. Add and configure css-modules.
+3. CSS and selectors refactoring. All are made hastily and require to be
    revised.
-10. Markup for the post. Now they are just strings without any layout. I use
-    'html-parser' for that old posts were layouted with HTML, but it's not the
-    best solution.
-11. Revise state management. Now I use Context to control the logging-in, and
-    control showing/closing of the modal with closures. It works, but I'm afraid
-    it makes the code complicated and confusing.
+4. Markup for the post. Now they are just strings without any layout. I use
+   'html-parser' for that old posts were layouted with HTML, but it's not the
+   best solution.
+5. Revise state management. Now I use Context to control the logging-in, and
+   control showing/closing of the modal with closures. It works, but I'm afraid
+   it makes the code complicated and confusing.
 
-12. Add confirmation prompt to closing the modal if it is not empty.
+6. Add confirmation prompt to closing the modal if it is not empty.
 
-13. Add mobile friendly design
+7. Add mobile friendly design
 
-14. Add form validation
+8. Add form validation
 
-complete 9. Add separate login page with disclaimer, that now it is only for
+complete: Added separate login page with disclaimer, that now it is only for
 admin // no need the disclaimer
 
-complete: Add saving new post text in context. Teporary, revise soon when add the redux
+complete: Added saving new post text in context. Teporary, revise soon when add
+the redux
+
+complete: Added back-to-top-button
