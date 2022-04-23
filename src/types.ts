@@ -20,3 +20,9 @@ export interface ModalBasicProps {
 }
 
 export type modalTypes = 'newPostModal' | 'signInModal';
+
+export interface CurrentUser {
+  email: string | null;
+  userName: string;
+  role: 'admin' | 'user' | 'guest';
+}
