@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import BlogBody from 'src/components/BlogBody/BlogBody';
 import Header from 'src/components/Header/Header';
 import Modal from 'src/components/Modal/Modal';
-import SignInPage from '../SignInPage/SignInPage';
+import SignInPage from 'src/pages/SignInPage/SignInPage';
 import modalModel from 'src/models/modal.model';
 import BackToTopButton from 'src/components/BackToTopButton/BackToTopButton';
 
@@ -44,7 +44,6 @@ const Homepage = () => {
   };
 
   useEffect(() => {
-    console.log('asdf');
     window.addEventListener('scroll', listenToScrollShowBackButton);
 
     return () =>

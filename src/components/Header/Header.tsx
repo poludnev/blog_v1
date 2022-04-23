@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'src/contexts/AuthContext';
 import { modalTypes } from 'src/types';
@@ -10,22 +10,20 @@ const Header = (props: {
   showModal: (modalType: modalTypes) => () => void;
 }) => {
   const navigate = useNavigate();
-  const { currentUser, signOut } = useAuth();
-  const [isSignedIn, setSignedIn] = useState<boolean>(false);
+  const { currentUser, signOut, isSignedIn } = useAuth();
   const [isShowDropdown, setShowDropdown] = useState<boolean>(false);
   const { showModal } = props;
 
   const toogleDropdown = (): void => {
     setShowDropdown(!isShowDropdown);
   };
-
-  useEffect(() => {
-    setSignedIn(!!currentUser);
-  }, [currentUser]);
   return (
     <div className={styles.header}>
       {isShowDropdown && (
         <div className={styles.dropdown} onMouseLeave={toogleDropdown}>
+          <div className={styles.dropdownRow}>
+            <div className="sign-in-status">User: {currentUser?.userName}</div>
+          </div>
           {!isSignedIn && (
             <div className={styles.dropdownRow}>
               <Button
@@ -39,11 +37,6 @@ const Header = (props: {
           )}
           {isSignedIn && (
             <>
-              <div className={styles.dropdownRow}>
-                <div className="sign-in-status">
-                  User: {currentUser?.displayName}
-                </div>
-              </div>
               <div className={styles.dropdownRow}>
                 <Button
                   title="New Post"
@@ -79,11 +72,9 @@ const Header = (props: {
           />
         </div>
         <div className={styles.headerNavMenu}>
+          <div className="sign-in-status">User: {currentUser?.userName}</div>
           {isSignedIn && (
             <>
-              <div className="sign-in-status">
-                User: {currentUser?.displayName}
-              </div>
               <Button
                 title="New Post"
                 style={{ color: 'green', inverted: true, size: 'smaller' }}
@@ -100,7 +91,6 @@ const Header = (props: {
             <Button
               title="Sign In"
               onClick={() => {
-                console.log('click');
                 navigate('/signin');
               }}
               style={{ color: 'blue', size: 'smaller', inverted: true }}
