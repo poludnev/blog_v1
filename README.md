@@ -53,3 +53,5 @@ Anyway:
 
 complete 9. Add separate login page with disclaimer, that now it is only for
 admin // no need the disclaimer
+
+complete: Add saving new post text in context. Teporary, revise soon when add the redux
