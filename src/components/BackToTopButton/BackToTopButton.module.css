@@ -1,0 +1,31 @@
+.container {
+  position: fixed;
+  top: 10px;
+  right: 5px;
+}
+
+.button {
+  border: 1px solid rgba(100, 100, 100, 0.6);
+  border-radius: 20%;
+  background-color: transparent;
+  font-size: 18px;
+  color: rgba(100, 100, 100, 0.6);
+  padding: 5px 10px;
+}
+
+.button:hover {
+  border: 1px solid rgba(150, 150, 150, 1);
+  font-weight: 700;
+  color: rgba(150, 150, 150, 1);
+}
+@media (min-width: 1110px) {
+  .container {
+    right: 5%;
+  }
+}
+
+@media (min-width: 1310px) {
+  .container {
+    right: 12%;
+  }
+}

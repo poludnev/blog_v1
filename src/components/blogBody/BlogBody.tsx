@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Post from '../Post/Post';
+import Post from 'src/components/Post/Post';
 import BlogRepository from 'src/repository/blogRepository';
 
 import 'src/components/BlogBody/BlogBody.styles.scss';

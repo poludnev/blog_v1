@@ -17,7 +17,6 @@
 }
 
 .modal-header {
-  // background-color: aliceblue;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -59,7 +58,6 @@
 }
 
 .sing-in-modal-from-container {
-  // background-color: white;
   position: relative;
   max-width: 500px;
   width: auto;
@@ -100,7 +98,7 @@
 
 .sign-in-form-buttons {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 
