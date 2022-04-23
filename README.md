@@ -49,6 +49,8 @@ Anyway:
 
 8. Add form validation
 
+9. Add paginator
+
 complete: Added separate login page with disclaimer, that now it is only for
 admin // no need the disclaimer
 
