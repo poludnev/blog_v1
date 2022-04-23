@@ -31,7 +31,6 @@ const Header = (props: {
               <Button
                 title="Sign In"
                 onClick={() => {
-                  console.log('click');
                   navigate('/signin');
                 }}
                 style={{ color: 'blue', size: 'smaller', inverted: true }}
@@ -42,7 +41,7 @@ const Header = (props: {
             <>
               <div className={styles.dropdownRow}>
                 <div className="sign-in-status">
-                  Username: {currentUser?.email}
+                  User: {currentUser?.displayName}
                 </div>
               </div>
               <div className={styles.dropdownRow}>
@@ -83,7 +82,7 @@ const Header = (props: {
           {isSignedIn && (
             <>
               <div className="sign-in-status">
-                Signed in as {currentUser?.email}
+                User: {currentUser?.displayName}
               </div>
               <Button
                 title="New Post"
